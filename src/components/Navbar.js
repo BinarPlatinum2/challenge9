@@ -100,11 +100,11 @@ const Navbar = () => {
                     <div
                       className='dropdown-menu dropdown-menu-lg dropdown-menu-right show'
                       style={{ left: "inherit", right: "0px" }}>
-                      <a href='#' className='dropdown-item'>
+                      <a href='/updateprofile' className='dropdown-item'>
                         <i className='fas fa-user mr-2' /> Update Profile
                       </a>
                       <div className='dropdown-divider' />
-                      <a href='/updateprofile' className='dropdown-item'>
+                      <a href='#' className='dropdown-item'>
                         <i className='fas fa-key mr-2' /> Reset Password
                       </a>
                       <div className='dropdown-divider' />
