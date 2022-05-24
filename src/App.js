@@ -14,6 +14,7 @@ import RPSPage from "./components/RPSpage";
 import Playground from "./Playground";
 import GameDetail from "./components/GameDetail/GameDetail";
 import LandingPage from "./components/LandingPage/LandingPage";
+import UpdateProfile from "./components/UpdateProfile";
 
 function App() {
   return (
