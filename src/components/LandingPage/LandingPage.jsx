@@ -86,7 +86,7 @@ const LandingPage  = () => {
                     Iure, quas quidem possimus dolorum esse eligendi?
                     </small>
                   </p>
-                  <a href="#" className="btn btn-primary">Read More</a>
+                  {/* <a href="#" className="btn btn-primary">Read More</a> */}
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@ const LandingPage  = () => {
                     Iure, quas quidem possimus dolorum esse eligendi?
                     </small>
                   </p>
-                  <a href="#" className="btn btn-dark">Read More</a>
+                  {/* <a href="#" className="btn btn-dark">Read More</a> */}
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ const LandingPage  = () => {
                     Iure, quas quidem possimus dolorum esse eligendi?
                     </small>
                   </p>
-                  <a href="#" className="btn btn-primary">Read More</a>
+                  {/* <a href="#" className="btn btn-primary">Read More</a> */}
                 </div>
               </div>
             </div>
