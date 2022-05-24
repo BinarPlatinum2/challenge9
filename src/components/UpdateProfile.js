@@ -105,7 +105,7 @@ const UpdateProfile = () => {
   }, [id]);
 
   console.log("GET PLAYER", playerList);
-  const updateProfile = () => {
+  const updateProfile = async () => {
     const profileCollectionRef1 = doc(db, "profiles", playerList[0].id);
     updateDoc(profileCollectionRef1, {
       username: inputUsername,
