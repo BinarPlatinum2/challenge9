@@ -126,7 +126,7 @@ const UpdateProfile = () => {
                 <div className='col-md-6'>
                   <div className='card'>
                     <div className='card-header'>
-                      <h3>form create profile</h3>
+                      <h3>form update profile</h3>
                     </div>
                     <div className='card-body'>
                       <div className='form-group'>
