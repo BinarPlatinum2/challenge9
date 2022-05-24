@@ -34,6 +34,24 @@ const PlayerChoice = styled.div`
     align-items: center;
 `
 
+const PlayerChoiceImage = styled.img`
+    width: 60px;
+    height: 60px;
+    margin-top: 1em;
+    border: none;
+`
+
+const ComputerChoiceImage = styled.img`
+width: 60px;
+    height: 60px;
+    margin-top: 1em;
+    border: none;
+`
+
+const GameResult = styled.h1`
+font-size: 48px;
+`
+
 const InnerText = styled.p`
 color: whitesmoke;
 font-size: 2em;
@@ -99,13 +117,16 @@ const RPSpage = () => {
     const [username, setUsername] = useState('')
     const [photoUrl, setPhotoUrl] = useState('')
     const [guide, setGuide] = useState(false)
+    const [imgName, setImgName] = useState(null)
+    const [compImgName, setCompImgName] = useState(null)
 
     let navigate = useNavigate()
 
     let id = user.uid
 
     const handleClick = (value) => {
-        setUserChoice(value)
+        setUserChoice(require('../assets/image/' + value + '.png'))
+        setImgName(value)
         generateComputerChoice()
         setCounter(counter + 1)
         stopGame()
@@ -136,7 +157,16 @@ const RPSpage = () => {
 
     const generateComputerChoice = () => {
         const randomChoice = choices[Math.floor(Math.random() * choices.length)]
-        setComputerChoice(randomChoice)
+
+        setCompImgName(randomChoice)
+
+        if (randomChoice === 'rock') {
+            setComputerChoice(require('../assets/image/rock.png'))
+        } else if (randomChoice === 'paper') {
+            setComputerChoice(require('../assets/image/paper.png'))
+        } else {
+            setComputerChoice(require('../assets/image/scissors.png'))
+        }
     }
 
     useEffect(() => {
@@ -145,7 +175,7 @@ const RPSpage = () => {
 
 
     const checkResult = () => {
-        switch (userChoice + computerChoice) {
+        switch (imgName + compImgName) {
             case 'scissorspaper':
             case 'rockscissors':
             case 'paperrock':
@@ -244,16 +274,18 @@ const RPSpage = () => {
                         {/* /.col */}
                     </div>
                     <div className="row my-3">
-                        <div className="col-md-4">
-                            <h2>{username} Choice:</h2>
-                            <h3>{userChoice}</h3>
+                        <div className="col-md-4 d-flex flex-column">
+                            <h2 className='align-self-center'>{username} Choice:</h2>
+                            <PlayerChoiceImage src={userChoice} className="justify-content-center align-self-center" />
+                            <h3 className='align-self-center'>{imgName}</h3>
                         </div>
                         <div className="col-md-4 text-center">
-                            <h1>{result}</h1>
+                            <GameResult className='p-5 font-weight-bold'>{result}</GameResult>
                         </div>
-                        <div className="col-md-4">
-                            <h2>Computer Choice:</h2>
-                            <h3>{computerChoice}</h3>
+                        <div className="col-md-4 d-flex flex-column">
+                            <h2 className='align-self-center'>Computer Choice:</h2>
+                            <ComputerChoiceImage src={computerChoice} className="justify-content-center align-self-center" />
+                            <h3 className='align-self-center'>{compImgName}</h3>
                         </div>
 
                         <PlayerChoice>
