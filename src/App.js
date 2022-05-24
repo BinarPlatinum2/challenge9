@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import RPSPage from "./components/RPSpage"
 import Playground from "./Playground";
 import GameDetail from "./components/GameDetail/GameDetail"
+import LandingPage from "./components/LandingPage/LandingPage";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
       <AuthContextProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/games" element={<GamePages />} />
           <Route path="/signin" element={<Signin />} />

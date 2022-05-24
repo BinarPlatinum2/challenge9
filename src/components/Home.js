@@ -3,8 +3,10 @@ import video_game from '../assets/image/video_game.svg'
 import multi_player from '../assets/image/multi_player.svg'
 import score_rank from '../assets/image/score_rank.svg'
 import { Link } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const Home = () => {
+  const { user } = UserAuth()
   return (
     <>
      <section

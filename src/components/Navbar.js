@@ -34,7 +34,7 @@ const Navbar = () => {
                             {!isAuth ? (
                                 <>
                                     <li className="nav-item active ml-5">
-                                        <Link to='/' className="nav-link">Home</Link>
+                                        <Link to='/home' className="nav-link">Home</Link>
                                     </li>
                                     <li className="nav-item active">
                                         <Link to='/games' className="nav-link">Our Games</Link>

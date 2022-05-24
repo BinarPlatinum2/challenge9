@@ -219,7 +219,7 @@ const RPSpage = () => {
 
     return (
         <>
-            <section className='dark-mode' style={{ height: '105vh' }}>
+            <section className='dark-mode' style={{ height: '150vh' }}>
                 <div className="container">
                     <Title>Rock - Paper - Scissors</Title>
                     <GameRecord>Game Stats</GameRecord>
