@@ -65,7 +65,7 @@ const Signin = () => {
                                         </div>
                                         <button type="submit" className='btn btn-primary mt-2 col-12'>Sign In</button>
                                         <button className="btn btn-block btn-danger mt-2" onClick={signInWithGoogle}>
-                                            <i class="fab fa-google mr-2"></i>
+                                            <i className="fab fa-google mr-2"></i>
                                             Sign In using Google
                                         </button>
                                     </form>
