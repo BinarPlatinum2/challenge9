@@ -78,6 +78,7 @@ const Account = () => {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setPhotoUrl(downloadURL.toString());
+          alert('Image uploaded!')
           console.log(photoUrl)
         });
       }

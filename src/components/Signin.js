@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 
+//GOOGLE OAUTH
+import { signInWithPopup } from 'firebase/auth'
+import { auth, provider } from '../firebase'
+//________
+
 const Signin = () => {
     const { signIn, isAuth, setIsAuth, user, forgotPassword } = UserAuth()
     const [email, setEmail] = useState('')
@@ -23,6 +28,16 @@ const Signin = () => {
             console.log(e.message);
         }
     }
+
+    // GOOGLE OAUTH
+    const signInWithGoogle = async () => {
+        await signInWithPopup(auth, provider)
+        localStorage.setItem('isAuth', true)
+        setIsAuth(true)
+        navigate('/home')
+    }
+
+    //____________
 
     const forgotPasswordHandler = () => {
         if (email) forgotPassword(email).then(alert('Check your email (kindly check spam also)'))
@@ -49,7 +64,7 @@ const Signin = () => {
                                             <input onChange={(e) => setPassword(e.target.value)} type="password" name='password' className="form-control" ></input>
                                         </div>
                                         <button type="submit" className='btn btn-primary mt-2 col-12'>Sign In</button>
-                                        <button className="btn btn-block btn-danger mt-2">
+                                        <button className="btn btn-block btn-danger mt-2" onClick={signInWithGoogle}>
                                             <i class="fab fa-google mr-2"></i>
                                             Sign In using Google
                                         </button>
